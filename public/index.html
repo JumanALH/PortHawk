@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortHawk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">&#9211;</span>
+        <h1>PortHawk</h1>
+      </div>
+      <p class="subtitle">Advanced Network Port Scanner & Security Assessment Tool</p>
+    </header>
+
+    <main class="main">
+      <section class="scan-section">
+        <div class="card scan-card">
+          <h2 class="card-title">
+            <span class="icon">&#128269;</span>
+            New Scan
+          </h2>
+          <form id="scanForm">
+            <div class="form-group">
+              <label for="target">Target (IP or Hostname)</label>
+              <input type="text" id="target" placeholder="e.g. scanme.nmap.org or 192.168.1.1" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="scanType">Scan Type</label>
+                <select id="scanType">
+                  <option value="common">Common Ports (30)</option>
+                  <option value="quick">Quick Scan (13)</option>
+                  <option value="top100">Top 100 Ports</option>
+                  <option value="full">Full Range (1-1024)</option>
+                  <option value="custom">Custom Range</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="timeout">Timeout (ms)</label>
+                <select id="timeout">
+                  <option value="1000">1000ms (Fast)</option>
+                  <option value="2000" selected>2000ms (Default)</option>
+                  <option value="3000">3000ms (Thorough)</option>
+                  <option value="5000">5000ms (Deep)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" id="customPortGroup" style="display:none">
+              <label for="customPorts">Port Range</label>
+              <input type="text" id="customPorts" placeholder="e.g. 80,443,8080 or 1-1024">
+            </div>
+            <div class="form-group">
+              <label for="concurrency">Concurrency</label>
+              <input type="range" id="concurrency" min="10" max="200" value="100">
+              <span id="concurrencyValue">100</span> parallel connections
+            </div>
+            <button type="submit" class="btn-scan" id="btnScan">
+              <span class="btn-text">Start Scan</span>
+              <span class="btn-loading" style="display:none">Scanning...</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="progress-section" id="progressSection" style="display:none">
+        <div class="card">
+          <h2 class="card-title">
+            <span class="icon">&#9889;</span>
+            Scan Progress
+          </h2>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-info">
+            <span id="progressText">0%</span>
+            <span id="progressPorts">0 / 0 ports</span>
+          </div>
+          <div class="live-feed" id="liveFeed"></div>
+        </div>
+      </section>
+
+      <section class="results-section" id="resultsSection" style="display:none">
+        <div class="card">
+          <div class="results-header">
+            <h2 class="card-title">
+              <span class="icon">&#128200;</span>
+              Scan Results
+            </h2>
+            <div class="export-btns">
+              <button class="btn-export" onclick="exportResults('json')">Export JSON</button>
+              <button class="btn-export" onclick="exportResults('csv')">Export CSV</button>
+              <button class="btn-export" onclick="exportResults('html')">Export HTML</button>
+            </div>
+          </div>
+
+          <div class="summary-grid" id="summaryGrid"></div>
+
+          <div id="securityScoreSection" style="display:none"></div>
+
+          <div class="table-container">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Port</th>
+                  <th>State</th>
+                  <th>Service</th>
+                  <th>Risk</th>
+                  <th>Banner / Details</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody"></tbody>
+            </table>
+          </div>
+
+          <div id="vulnSection" style="display:none"></div>
+
+          <div class="recommendations" id="recommendations"></div>
+        </div>
+      </section>
+
+      <section class="network-section">
+        <div class="card">
+          <h2 class="card-title">
+            <span class="icon">&#127760;</span>
+            Network Discovery
+          </h2>
+          <p class="section-desc">Discover active hosts on your local network subnet.</p>
+          <button class="btn-scan" id="btnNetDiscover" style="margin-bottom: 16px;">Discover Hosts</button>
+          <div id="netDiscoverResults">
+            <p class="empty-state">Click "Discover Hosts" to scan your local network</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <div class="card">
+          <h2 class="card-title">
+            <span class="icon">&#128218;</span>
+            Scan History
+          </h2>
+          <div id="historyList" class="history-list">
+            <p class="empty-state">No saved scans yet</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>PortHawk v1.0 - For authorized security testing only</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

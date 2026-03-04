@@ -1,0 +1,15 @@
+{
+  "name": "porthawk",
+  "version": "1.0.0",
+  "description": "PortHawk - Advanced Network Port Scanner & Service Detector",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["port-scanner", "cybersecurity", "network"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
