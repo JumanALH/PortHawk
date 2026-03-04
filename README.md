@@ -18,14 +18,12 @@ A cybersecurity tool built with Node.js that scans network ports, detects runnin
 
 <div align="center">
 
+
 ### Main Dashboard
-<img src="screenshots/dashboard.png" alt="PortHawk Dashboard" width="900">
+<img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
 
 ### Security Score & Vulnerability Detection
 <img src="screenshots/results.png" alt="Security Score and Vulnerabilities" width="900">
-
-### Network Discovery & Scan History
-<img src="screenshots/history.png" alt="Network Discovery and Scan History" width="900">
 
 </div>
 
