@@ -2,9 +2,6 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Node](https://img.shields.io/badge/node-%3E%3D18-green)
-![License](https://img.shields.io/badge/license-MIT-purple)
 
 **Advanced Network Port Scanner, Vulnerability Detector & Security Assessment Tool**
 
@@ -89,7 +86,6 @@ npm install
 ## Usage
 
 ```bash
-wsl
 cp -r "/mnt/c/Users/$USERNAME/Desktop/PROJECT#2/PortHawk" ~/PortHawk
 cd ~/PortHawk
 npm install
