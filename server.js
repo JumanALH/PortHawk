@@ -196,7 +196,7 @@ app.post('/api/discover', async (req, res) => {
   cidr = parseInt(cidr);
 
   if (cidr < 24 || cidr > 30) {
-    return res.status(400).json({ error: 'CIDR must be between /24 and /30' });
+    cidr = 24;
   }
 
   try {
