@@ -84,11 +84,8 @@ npm install
 ## Usage
 
 ```bash
-cp -r "/mnt/c/Users/$USERNAME/Desktop/PROJECT#2/PortHawk" ~/PortHawk
-cd ~/PortHawk
-npm install
 npm start
-# Open http://localhost:3000
+Open http://localhost:3000
 ```
 
 ### Scan Options
