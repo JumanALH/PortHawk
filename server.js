@@ -176,11 +176,24 @@ app.get('/api/scan/:id', (req, res) => {
 });
 
 app.post('/api/discover', async (req, res) => {
-  const { subnet, cidr } = req.body;
+  let { subnet, cidr } = req.body;
 
   if (!subnet || !cidr) {
-    return res.status(400).json({ error: 'Subnet and CIDR required' });
+    const discovery = new NetworkDiscovery();
+    const interfaces = discovery.getLocalNetworkInfo();
+    
+    if (!interfaces || interfaces.length === 0) {
+      return res.status(400).json({ error: 'Subnet and CIDR required' });
+    }
+
+    
+    const iface = interfaces[0];
+    const cidrFull = iface.cidr;
+    subnet = cidrFull.split('/')[0];
+    cidr = parseInt(cidrFull.split('/')[1]);
   }
+
+  cidr = parseInt(cidr);
 
   if (cidr < 24 || cidr > 30) {
     return res.status(400).json({ error: 'CIDR must be between /24 and /30' });
