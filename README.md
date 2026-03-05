@@ -79,12 +79,12 @@ PortHawk/
 git clone https://github.com/JumanALH/PortHawk.git
 cd PortHawk
 npm install
+npm start
 ```
 
 ## Usage
 
 ```bash
-npm start
 Open http://localhost:3000
 ```
 
