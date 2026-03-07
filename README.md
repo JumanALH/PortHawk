@@ -2,6 +2,9 @@
 
 <div align="center">
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Node](https://img.shields.io/badge/node-%3E%3D18-green)
+![License](https://img.shields.io/badge/license-MIT-purple)
 
 **Advanced Network Port Scanner, Vulnerability Detector & Security Assessment Tool**
 
@@ -18,8 +21,7 @@ A cybersecurity tool built with Node.js that scans network ports, detects runnin
 ### Main Dashboard
 <img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
 
-<img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
-
+### Security Score & Vulnerability Detection
 <img src="screenshots/results.png" alt="Security Score and Vulnerabilities" width="900">
 
 
@@ -76,37 +78,39 @@ PortHawk/
 
 ---
 
-## Requirements
+## Installation & Usage
 
-- **Node.js v18 or higher** — [Download here](https://nodejs.org)
-- **npm** (comes with Node.js)
+### Step 1 — Install Node.js
+Download and install Node.js from: **https://nodejs.org** (choose the LTS version)
 
-## Installation
+### Step 2 — Download PortHawk
 
+**Option A — Using Git:**
 ```bash
 git clone https://github.com/JumanALH/PortHawk.git
-cd PortHawk
+```
+> Don't have Git? Download from https://git-scm.com
+
+**Option B — Direct Download:**  
+Click the green **Code** button on this page → **Download ZIP** → Extract the folder
+
+### Step 3 — Open a terminal inside the project folder
+
+- **Windows:** Hold `Shift` + Right-click inside the `PortHawk` folder → click **"Open PowerShell window here"**
+- **Mac/Linux:** Open Terminal and `cd` into the folder
+
+### Step 4 — Install dependencies
+```bash
 npm install
-npm start
 ```
 
-## Usage
-
+### Step 5 — Run the app
 ```bash
 npm start
 ```
 
-Then open your browser at **http://localhost:3000**
-
-> **Windows users:** Open PowerShell inside the project folder and run `npm start`.
-
-## Troubleshooting
-
-**Network Discovery shows wrong IP (e.g. 192.168.56.x)**  
-This happens when VirtualBox, VMware, or Docker is installed — their virtual adapters were detected instead of your real network. This is now fixed; the app automatically skips virtual adapters.
-
-**Permission errors on scan**  
-Only scan systems you own or have explicit permission to test.
+### Step 6 — Open in your browser
+Go to: **http://localhost:3000**
 
 ### Scan Options
 
