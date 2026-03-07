@@ -80,49 +80,17 @@ PortHawk/
 
 ## Installation & Usage
 
-### Step 1 — Install Node.js
-Download and install Node.js from: **https://nodejs.org** (choose the LTS version)
+1. Install **Node.js** from https://nodejs.org
+2. Download this repo (green **Code** button → **Download ZIP**) and extract it
+3. Open the `PortHawk` folder, type `powershell` in the address bar and hit Enter
+4. Run:
 
-> After installing, restart your computer.
-
-### Step 2 — Download PortHawk
-
-**Option A: Using Git**
 ```bash
-git clone https://github.com/JumanALH/PortHawk.git
-```
-
-**Option B: Manual Download**
-1. Go to https://github.com/JumanALH/PortHawk
-2. Click the green **Code** button → **Download ZIP**
-3. Extract the ZIP file anywhere on your computer
-
-### Step 3 — Install dependencies
-
-**Windows:**
-1. Open the `PortHawk` folder
-2. Click on the address bar at the top of the folder, type `powershell` and press Enter
-3. Run:
-```powershell
 npm install
-```
-
-**Mac / Linux:**
-```bash
-cd PortHawk
-npm install
-```
-
-### Step 4 — Run the app
-
-```bash
 npm start
 ```
 
-Then open your browser and go to: **http://localhost:3000**
-
-> To stop the app, press `Ctrl + C` in the terminal.
-
+5. Open your browser at **http://localhost:3000**
 ### Scan Options
 
 | Option | Description |
