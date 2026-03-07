@@ -2,9 +2,6 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Node](https://img.shields.io/badge/node-%3E%3D18-green)
-![License](https://img.shields.io/badge/license-MIT-purple)
 
 **Advanced Network Port Scanner, Vulnerability Detector & Security Assessment Tool**
 
@@ -161,6 +158,3 @@ PortHawk checks service banners against a built-in CVE database:
 > **For authorized security testing and educational purposes only.**
 > Unauthorized port scanning may be illegal in your jurisdiction. Always obtain proper permission before scanning any system you do not own.
 
-## License
-
-MIT License
