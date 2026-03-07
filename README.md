@@ -1,10 +1,5 @@
 # PortHawk
 
-<div align="center">
-
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Node](https://img.shields.io/badge/node-%3E%3D18-green)
-![License](https://img.shields.io/badge/license-MIT-purple)
 
 **Advanced Network Port Scanner, Vulnerability Detector & Security Assessment Tool**
 
@@ -43,7 +38,6 @@ A cybersecurity tool built with Node.js that scans network ports, detects runnin
 - **Real-time Progress** — Live scan updates via Server-Sent Events (SSE)
 - **Export Reports** — Download reports as JSON, CSV, or full HTML
 - **Scan History** — Automatically saves every scan result for later review
-- **Dark Cyber UI** — Professional dark-themed web interface
 
 ---
 
