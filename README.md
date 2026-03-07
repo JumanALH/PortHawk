@@ -2,6 +2,9 @@
 
 <div align="center">
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Node](https://img.shields.io/badge/node-%3E%3D18-green)
+![License](https://img.shields.io/badge/license-MIT-purple)
 
 **Advanced Network Port Scanner, Vulnerability Detector & Security Assessment Tool**
 
@@ -15,10 +18,12 @@ A cybersecurity tool built with Node.js that scans network ports, detects runnin
 
 <div align="center">
 
-
+### Main Dashboard
 <img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
 
+### Security Score & Vulnerability Detection
 <img src="screenshots/results.png" alt="Security Score and Vulnerabilities" width="900">
+
 
 </div>
 
@@ -73,20 +78,50 @@ PortHawk/
 
 ---
 
-## Installation
+## Installation & Usage
 
+### Step 1 — Install Node.js
+Download and install Node.js from: **https://nodejs.org** (choose the LTS version)
+
+> After installing, restart your computer.
+
+### Step 2 — Download PortHawk
+
+**Option A: Using Git**
 ```bash
 git clone https://github.com/JumanALH/PortHawk.git
+```
+
+**Option B: Manual Download**
+1. Go to https://github.com/JumanALH/PortHawk
+2. Click the green **Code** button → **Download ZIP**
+3. Extract the ZIP file anywhere on your computer
+
+### Step 3 — Install dependencies
+
+**Windows:**
+1. Open the `PortHawk` folder
+2. Click on the address bar at the top of the folder, type `powershell` and press Enter
+3. Run:
+```powershell
+npm install
+```
+
+**Mac / Linux:**
+```bash
 cd PortHawk
 npm install
+```
+
+### Step 4 — Run the app
+
+```bash
 npm start
 ```
 
-## Usage
+Then open your browser and go to: **http://localhost:3000**
 
-```bash
-Open http://localhost:3000
-```
+> To stop the app, press `Ctrl + C` in the terminal.
 
 ### Scan Options
 

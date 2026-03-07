@@ -366,17 +366,9 @@ app.get('/api/results', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  const url = `http://localhost:${PORT}`;
-  const line = '═'.repeat(40);
-  const pad = (str) => {
-    const total = 38;
-    const spaces = total - str.length;
-    const left = Math.floor(spaces / 2);
-    const right = spaces - left;
-    return ' '.repeat(left) + str + ' '.repeat(right);
-  };
-  console.log(`\n  ╔${line}╗`);
-  console.log(`  ║${pad('PortHawk v1.0')}║`);
-  console.log(`  ║${pad(url)}║`);
-  console.log(`  ╚${line}╝\n`);
+  console.log(`\n  +----------------------------------------+`);
+  console.log(`  |   🦅 PortHawk v1.0                     |`);
+  console.log(`  |   http://localhost:${PORT}                 |`);
+  console.log(`  |   Press Ctrl+C to stop                 |`);
+  console.log(`  +----------------------------------------+\n`);
 });
