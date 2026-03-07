@@ -2,9 +2,6 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Node](https://img.shields.io/badge/node-%3E%3D18-green)
-![License](https://img.shields.io/badge/license-MIT-purple)
 
 **Advanced Network Port Scanner, Vulnerability Detector & Security Assessment Tool**
 
@@ -21,7 +18,8 @@ A cybersecurity tool built with Node.js that scans network ports, detects runnin
 ### Main Dashboard
 <img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
 
-### Security Score & Vulnerability Detection
+<img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
+
 <img src="screenshots/results.png" alt="Security Score and Vulnerabilities" width="900">
 
 
@@ -89,6 +87,7 @@ PortHawk/
 git clone https://github.com/JumanALH/PortHawk.git
 cd PortHawk
 npm install
+npm start
 ```
 
 ## Usage
