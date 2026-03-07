@@ -12,9 +12,18 @@ class NetworkDiscovery {
     const interfaces = os.networkInterfaces();
     const results = [];
 
+    // Patterns for virtual/non-physical adapters to skip
+    const virtualPatterns = /virtual|vbox|vmware|vmnet|docker|veth|tap|tun|bridge|hyper-v|pseudo|loopback/i;
+
+    // First pass: only real physical interfaces
     for (const [name, addrs] of Object.entries(interfaces)) {
+      if (virtualPatterns.test(name)) continue;
+
       for (const addr of addrs) {
         if (addr.family === 'IPv4' && !addr.internal) {
+          // Skip 192.168.56.x range (VirtualBox host-only default range)
+          if (addr.address.startsWith('192.168.56.')) continue;
+
           results.push({
             interface: name,
             ip: addr.address,
@@ -22,6 +31,23 @@ class NetworkDiscovery {
             mac: addr.mac,
             cidr: addr.cidr || `${addr.address}/${this._netmaskToCidr(addr.netmask)}`
           });
+        }
+      }
+    }
+
+    // Fallback: if no real interfaces found, return all non-internal IPv4
+    if (results.length === 0) {
+      for (const [name, addrs] of Object.entries(interfaces)) {
+        for (const addr of addrs) {
+          if (addr.family === 'IPv4' && !addr.internal) {
+            results.push({
+              interface: name,
+              ip: addr.address,
+              netmask: addr.netmask,
+              mac: addr.mac,
+              cidr: addr.cidr || `${addr.address}/${this._netmaskToCidr(addr.netmask)}`
+            });
+          }
         }
       }
     }

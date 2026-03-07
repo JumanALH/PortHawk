@@ -19,13 +19,11 @@ A cybersecurity tool built with Node.js that scans network ports, detects runnin
 <div align="center">
 
 ### Main Dashboard
-<img src="screenshots/dashboard.png" alt="PortHawk Dashboard" width="900">
+<img src="screenshots\Dashboard.png" alt="PortHawk Dashboard" width="900">
 
 ### Security Score & Vulnerability Detection
 <img src="screenshots/results.png" alt="Security Score and Vulnerabilities" width="900">
 
-### Network Discovery & Scan History
-<img src="screenshots/history.png" alt="Network Discovery and Scan History" width="900">
 
 </div>
 
@@ -80,6 +78,11 @@ PortHawk/
 
 ---
 
+## Requirements
+
+- **Node.js v18 or higher** — [Download here](https://nodejs.org)
+- **npm** (comes with Node.js)
+
 ## Installation
 
 ```bash
@@ -92,8 +95,19 @@ npm install
 
 ```bash
 npm start
-# Open http://localhost:3000
 ```
+
+Then open your browser at **http://localhost:3000**
+
+> **Windows users:** Open PowerShell inside the project folder and run `npm start`.
+
+## Troubleshooting
+
+**Network Discovery shows wrong IP (e.g. 192.168.56.x)**  
+This happens when VirtualBox, VMware, or Docker is installed — their virtual adapters were detected instead of your real network. This is now fixed; the app automatically skips virtual adapters.
+
+**Permission errors on scan**  
+Only scan systems you own or have explicit permission to test.
 
 ### Scan Options
 
